@@ -1,7 +1,7 @@
 # pubsub - Publisher & Subscriber Package
 Publisher & Subscriber package as template package and source code.  
 
-Created for the ROS Workspace 2020  
+Created for ROS Workshop 2020  
 Roverentwicklung für Explorationsaufgaben  
 Institute for Space Systems  
 University of Stuttgart.
