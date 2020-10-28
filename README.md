@@ -7,4 +7,4 @@ Insitute for Space Systems
 University of Stuttgart.
 
 Created by [Patrick Winterhalder](),  
-[IRS](https://www.irs.uni-stuttgart.de/en/){:target="_blank" rel="noopener"}, University of Stuttgart.
+[IRS](https://www.irs.uni-stuttgart.de/en/), University of Stuttgart.
