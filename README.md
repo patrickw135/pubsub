@@ -16,6 +16,7 @@ Created by [Patrick Winterhalder](),
 * Install [ROS2](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/) ("desktop" on PC, "base" on Raspberry Pi)
   * Do install _argcomplete_
   * No need for _ROS 1 bridge_, or _RMW implementations_
+* Install _rosdep_: `sudo apt install python3-rosdep2`
 * Work through ["Beginner: CLI Tools"](https://index.ros.org/doc/ros2/Tutorials/) tutorial
   * [Configuring your ROS 2 environment](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/):
     * Source setup files (underlay, overlay)
