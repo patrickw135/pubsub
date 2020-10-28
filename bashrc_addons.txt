@@ -1,0 +1,30 @@
+# ROS 2 SETUP
+echo "ROS 2 Setup:"
+# Source Underlay
+source /opt/ros/foxy/setup.bash
+echo "ROS Underlay:       source /opt/ros/foxy/setup.bash"
+
+# Source Overlay
+#. ~/ws_overlay_foxy/install/local_setup.bash
+#. install/setup.bash
+source ~/ws_overlay_foxy/install/local_setup.bash
+#source ~/ws_overlay_foxy/install/setup.bash
+echo "ROS Overlay:        source <ws>/install/local_setup.bash"
+#echo "ROS Overlay:        . install/local_setup.bash"
+echo "******************************************************"
+
+# ROS 2 Settings
+# Print ROS Variables
+#printenv | grep -i ROS
+echo "ROS_VERSION:        "$ROS_VERSION
+echo "ROS_PYTHON_VERSION: "$ROS_PYTHON_VERSION
+echo "ROS_DISTRO:         "$ROS_DISTRO
+echo "******************************************************"
+
+#export ROS_DOMAIN_ID=666
+echo "ROS 2 DDS Settings:"
+export ROS_DOMAIN_ID=69
+echo "ROS_DOMAIN_ID:      "$ROS_DOMAIN_ID
+echo "To change:          sudo nano /opt/ros/foxy/setup.bash"
+echo "******************************************************"
+printf "\n"
