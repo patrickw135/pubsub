@@ -28,6 +28,7 @@ Created by [Patrick Winterhalder](),
     * Configure ROS_DOMAIN_ID (DDS Network Number)
 
 ## During Workshop
-* Create workspace
+* Create workspace:
+  * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
 * Create package
 * Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
