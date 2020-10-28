@@ -14,6 +14,7 @@ Created by [Patrick Winterhalder](),
 * Install Visual Studio Code using [Ubuntu Software](https://wiki.ubuntuusers.de/Ubuntu_Software/)
 * Install [Git](https://linuxconfig.org/how-to-install-git-on-ubuntu-20-04-lts-focal-fossa-linux) (no account required yet)
 * Install [ROS2](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/) ("desktop" on PC, "base" on Raspberry Pi)
+  * No need for ROS 1 bridge, or RMW implementations
 * Work through ["Beginner: CLI Tools"](https://index.ros.org/doc/ros2/Tutorials/) tutorial
   * [Configuring your ROS 2 environment](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/):
     * Source setup files (underlay, overlay)
