@@ -26,9 +26,13 @@ Created by [Patrick Winterhalder](),
     * Add colcon_cd to .bashrc (shell startup script)
     * Check environment variables (check for correct installation)
     * Configure ROS_DOMAIN_ID (DDS Network Number)
+  * Cover turtlesim, rqt, topics, services, actions
 
 ## During Workshop
 * Create workspace:
   * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
-* Create package
+* Create packag inside ~/<ws>/src:
+  * `ros2 pkg create --build-type ament_cmake <package_name>`
+  * Go back up one layer: `cd ..`
+  * Build workspace: `colcon build --symlink-install`
 * Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
