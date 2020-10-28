@@ -21,4 +21,4 @@ Created by [Patrick Winterhalder](),
     * Add colcon_cd to .bashrc (shell startup script)
     * Check environment variables (check for correct installation)
     * Configure ROS_DOMAIN_ID (DDS Network Number)
-  * Configure .bashrc: Add [this]() to end of file
+  * Configure .bashrc: Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of file
