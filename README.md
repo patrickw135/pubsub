@@ -12,7 +12,7 @@ Created by [Patrick Winterhalder](),
   
   
 
-## Workshop Prerequisistes
+## Workshop Prerequisites
 * Install [Ubuntu 20.04]()
 * Install Visual Studio Code using [Ubuntu Software](https://wiki.ubuntuusers.de/Ubuntu_Software/)
 * Install [Git](https://linuxconfig.org/how-to-install-git-on-ubuntu-20-04-lts-focal-fossa-linux) (no account required yet)
