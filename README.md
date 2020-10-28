@@ -1,4 +1,10 @@
-# PubSub Package
-Publisher & Subscriber package created for the ROS Workspace, Roverentwicklung für Explorationsaufgaben, Insitute for Space Systems, University of Stuttgart.
+# pubsub - Publisher & Subscriber Package
+Publisher & Subscriber package as template package and source code.  
 
-Created by [Patrick Winterhalder](), IRS, University of Stuttgart
+Created for the ROS Workspace 2020  
+Roverentwicklung für Explorationsaufgaben  
+Insitute for Space Systems  
+University of Stuttgart.
+
+Created by [Patrick Winterhalder](),  
+[IRS](https://www.irs.uni-stuttgart.de/en/), University of Stuttgart.
