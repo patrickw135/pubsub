@@ -14,7 +14,8 @@ Created by [Patrick Winterhalder](),
 * Install Visual Studio Code using [Ubuntu Software](https://wiki.ubuntuusers.de/Ubuntu_Software/)
 * Install [Git](https://linuxconfig.org/how-to-install-git-on-ubuntu-20-04-lts-focal-fossa-linux) (no account required yet)
 * Install [ROS2](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/) ("desktop" on PC, "base" on Raspberry Pi)
-  * No need for ROS 1 bridge, or RMW implementations
+  * Do install _argcomplete_
+  * No need for _ROS 1 bridge_, or _RMW implementations_
 * Work through ["Beginner: CLI Tools"](https://index.ros.org/doc/ros2/Tutorials/) tutorial
   * [Configuring your ROS 2 environment](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/):
     * Source setup files (underlay, overlay)
@@ -22,4 +23,8 @@ Created by [Patrick Winterhalder](),
     * Add colcon_cd to .bashrc (shell startup script)
     * Check environment variables (check for correct installation)
     * Configure ROS_DOMAIN_ID (DDS Network Number)
-  * Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
+
+## During Workshop
+* Create workspace
+* Create package
+* Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
