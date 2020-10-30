@@ -23,7 +23,7 @@ echo "******************************************************"
 
 #export ROS_DOMAIN_ID=666
 echo "ROS 2 DDS Settings:"
-export ROS_DOMAIN_ID=69
+export ROS_DOMAIN_ID=666
 echo "ROS_DOMAIN_ID:      "$ROS_DOMAIN_ID
 echo "To change:          sudo nano /opt/ros/foxy/setup.bash"
 echo "******************************************************"
