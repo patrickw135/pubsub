@@ -25,3 +25,6 @@ This package contains your scripts, programs and libraries. After building the w
 
 * <package_name> directory:
   * __EINFÜGEN__
+
+## Resulting workspace
+![Tree visualization of colcon workspace](https://github.com/patrickw135/LibsDLR/blob/master/Documentation/libs1.png?raw=true)  
