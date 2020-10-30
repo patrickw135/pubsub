@@ -43,7 +43,7 @@ __Note:__ Only the files inside _src/_ are of importance.
 * Create workspace:
   * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
 * Create packag inside _~/{workspace_name}/src_:
-  * `ros2 pkg create --build-type ament_cmake <package_name>`
+  * `ros2 pkg create --build-type [ament_cmake, ament-python] <package_name>`
   * Go back up one layer: `cd ..`
   * Build workspace: `colcon build --symlink-install`
 * Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
