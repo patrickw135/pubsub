@@ -23,5 +23,10 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
 ## Python Package (eg. /pubsub)
 This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
 
-* <package_name> directory:
-  * This directory contains your python scripts (eg. listener.py)
+This package can be created as a CMake (C++) package or as a python package depending on your coding preference.
+* C++:    `ros2 pkg create --build-type ament-cmake <package_name>`
+* Python: `ros2 pkg create --build-type ament-python <package_name>`
+
+<package_name> directory:
+* This directory contains your python scripts (eg. listener.py)
+* Also place the non-standard libraries in this directory and import the library in your python scripts
