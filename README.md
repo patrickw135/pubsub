@@ -35,7 +35,7 @@ Created by [Patrick Winterhalder](),
 ## During Workshop
 * Create workspace:
   * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
-* Create packag inside _~/{ws}/src_:
+* Create packag inside _~/{workspace_name}/src_:
   * `ros2 pkg create --build-type ament_cmake <package_name>`
   * Go back up one layer: `cd ..`
   * Build workspace: `colcon build --symlink-install`
