@@ -22,13 +22,14 @@ def main(args=None):
 
             # Insert main looping script here
             # Then insert "rclpy.spin_once(<node_name>, timeout_sec=0.1)" for every node running in this script
+            rclpy.spin_once(talker_1, timeout_sec=0.1)
+            rclpy.spin_once(talker_2, timeout_sec=0.1)
             
-            pass
         except (KeyboardInterrupt, SystemExit):
             print("\n\nShutting down...")
-
             # Insert "<node_name>.destroy_node()" here for all running nodes in this script
-
+            talker_1.destroy_node()
+            talker_2.destroy_node()
             rclpy.shutdown()
         
 

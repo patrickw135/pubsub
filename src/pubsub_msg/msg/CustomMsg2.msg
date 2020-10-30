@@ -1,5 +1,6 @@
 # Header data, eg timestamp
-Header header
+# Problem: "header__struct.hpp: No such file or directory"
+#Header header
 
 # User inputs
 float32 pitch_ctrl
