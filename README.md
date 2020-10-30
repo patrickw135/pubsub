@@ -32,6 +32,13 @@ Created by [Patrick Winterhalder](),
     * Configure ROS_DOMAIN_ID (DDS Network Number)
   * Cover turtlesim, rqt, topics, services, actions
 
+## Install Instructions
+* Move to colcon workspace: `cd <workspace_path`
+* Clone repository: `git clone https://github.com/patrickw135/pubsub.git`
+* Build workspace: `colcon build`
+__Note:__ Only the files inside _src/_ are of importance.
+
+
 ## During Workshop
 * Create workspace:
   * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
