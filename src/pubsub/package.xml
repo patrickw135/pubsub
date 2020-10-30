@@ -7,10 +7,15 @@
   <maintainer email="winterhalder.p@googlemail.com">patrick</maintainer>
   <license>TODO: License declaration</license>
 
+  <!-- ADD THESE LINES -->
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  
   <build_depend>std_msgs</build_depend>
+  
+  <!-- CUSTOM LINE -->
+  <exec_depend>pubsub_msg</exec_depend>
+  
+  
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

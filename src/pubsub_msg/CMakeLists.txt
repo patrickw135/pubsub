@@ -21,6 +21,24 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+
+
+# -->
+# ADD THESE LINES: START HERE
+find_package(rosidl_default_generators REQUIRED)
+
+# CUSTOM LINES: CHANGE FOR YOUR FILENAMES
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/CustomMsg1.msg"
+  "msg/CustomMsg2.msg"
+ )
+# END HERE 
+# <--
+
+
+
+
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
