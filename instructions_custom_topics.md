@@ -7,7 +7,7 @@ For this at least two packages will be required:
 
 Up to now, the custom msg/srv/act files cannot be created inside python packages as this is not supported yet.  
 
-## Msg Package
+## Msg Package (eg. /pubsub_msg)
 This package makes up the basis for custom ROS interfaces and contains all custom msg/srv/act files. Additionally, the special files (_CMakeLists.txt_ and _package.xml_) describe how these interface files are to be used.  
 
 This package must be created as a CMake package: `ros2 pkg create --build-type ament-cmake <package_name>`  
@@ -20,7 +20,7 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
   * __EINFÜGEN__
 
 
-## Script Package
+## Script Package (eg. /pubsub)
 This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
 
 * <package_name> directory:
