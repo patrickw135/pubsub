@@ -16,8 +16,10 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
   * This directory contains the custom msg files (eg. CustomMsg1.msg)
 * CMakeLists.txt:
   * This file describes how to build this package
+  * Configure this file according to this [instruction](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#cmakelists-txt)
 * package.xml:
   * This file contains meta information about this package
+  * Configure this file according to this [instruction](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#package-xml)
 
 __ANLEITUNG schreiben__  
 __Wie müssen alle Dateien verändert werden?__
