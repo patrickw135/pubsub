@@ -19,4 +19,7 @@ This package makes up the basis for custom ROS interfaces and contains all custo
 
 
 ## Script Package
-This package contains 
+This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
+
+* <package_name> directory:
+  * __EINFÜGEN__
