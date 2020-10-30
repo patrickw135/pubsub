@@ -32,11 +32,19 @@ Created by [Patrick Winterhalder](),
     * Configure ROS_DOMAIN_ID (DDS Network Number)
   * Cover turtlesim, rqt, topics, services, actions
 
+## Install Instructions
+* Move to colcon workspace: `cd <workspace_path`
+* Clone repository: `git clone https://github.com/patrickw135/pubsub.git`
+* Build workspace: `colcon build`  
+__Note:__ Only the files inside _src/_ are of importance.
+
+
 ## During Workshop
 * Create workspace:
   * Install [_colcon_](https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/#colcon): `sudo apt install python3-colcon-common-extensions -y`
 * Create packag inside _~/{workspace_name}/src_:
-  * `ros2 pkg create --build-type ament_cmake <package_name>`
+  * `ros2 pkg create --build-type [ament_cmake, ament-python] <package_name>`
   * Go back up one layer: `cd ..`
   * Build workspace: `colcon build --symlink-install`
+* [Instruction](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md) on how to create a custom message to interface between nodes
 * Add [this](https://github.com/patrickw135/pubsub/blob/main/bashrc_addons.txt) to end of .bashrc (`sudo nano .bashrc`), find all instances of "`~/ws_overlay_foxy`" and replace it with your local path to your colcon workspace  
