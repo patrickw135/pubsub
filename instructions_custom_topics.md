@@ -19,6 +19,9 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
 * package.xml:
   * This file contains meta information about this package
 
+__ANLEITUNG schreiben__  
+__Wie müssen alle Dateien verändert werden?__
+
 
 ## Python Package (eg. /pubsub)
 This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
@@ -30,3 +33,7 @@ This package can be created as a CMake (C++) package or as a python package depe
 <package_name> directory:
 * This directory contains your python scripts (eg. listener.py)
 * Also place the non-standard libraries in this directory and import the library in your python scripts
+
+
+__ANLEITUNG schreiben__
+__Wie importiert man die msg files__ 
