@@ -22,6 +22,7 @@ Created by [Patrick Winterhalder](),
 * Install and update _rosdep_:
   * `sudo apt install python3-rosdep2 -y`
   * `rosdep update`
+  * (`sudo rosdep init`)
 * Work through ["Beginner: CLI Tools"](https://index.ros.org/doc/ros2/Tutorials/) tutorial
   * [Configuring your ROS 2 environment](https://index.ros.org/doc/ros2/Tutorials/Configuring-ROS2-Environment/):
     * Source setup files (underlay, overlay)
