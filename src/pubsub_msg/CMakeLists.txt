@@ -23,18 +23,24 @@ find_package(ament_cmake REQUIRED)
 
 
 
+
 # -->
 # ADD THESE LINES: START HERE
+
+find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(rclcpp REQUIRED)
 
 # CUSTOM LINES: CHANGE FOR YOUR FILENAMES
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CustomMsg1.msg"
   "msg/CustomMsg2.msg"
+  DEPENDENCIES builtin_interfaces
  )
+
 # END HERE 
 # <--
-
 
 
 
