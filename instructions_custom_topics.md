@@ -24,13 +24,34 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
 __ANLEITUNG schreiben__  
 __Wie müssen alle Dateien verändert werden?__
 
+### 1. Create CMake Package
+
+### 2. Create Message Files
+
+### 3. Configure CMakeLists.txt
+
+### 4. Configure package.xml
+
+### 5. Build Package
+
+### 6. Source newly built workspace
+
+### 7. Check functionality
+* Check functionality of your messages by creataing a topic using your newly created message:  
+CustomMsg1:  
+`ros2 topic pub /chatter1 pubsub_msg/CustomMsg1 "{temperature: {24.1234, 25.9876}, pressure: {1012.556, 1013.987}, humidity: {0.002, 0.001}}" --rate 1`  
+CustomMsg2:  
+`ros2 topic pub /chatter2 pubsub_msg/CustomMsg2 "{pitch_ctr: 33.33, yaw_ctrl: 0.5}" --rate 1`
+* Ouput:  
+
 
 ## Python Package (eg. /pubsub)
 This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
 
 This package can be created as a CMake (C++) package or as a python package depending on your coding preference.
 * C++:    `ros2 pkg create --build-type ament-cmake <package_name>`
-* Python: `ros2 pkg create --build-type ament-python <package_name>`
+* Python: `ros2 pkg create --build-type ament-python <package_name>`  
+
 
 <package_name> directory:
 * This directory contains your python scripts (eg. listener.py)
@@ -39,6 +60,18 @@ This package can be created as a CMake (C++) package or as a python package depe
 
 __ANLEITUNG schreiben__  
 __Wie importiert man die msg files__ 
+
+### 1. Create Python Package
+
+### 2. Write Python Scripts
+
+### 3. Configure package.xml
+
+### 4. Build Package
+
+### 5. Source newly built workspace
+
+
 
 
 __Sources__:  
