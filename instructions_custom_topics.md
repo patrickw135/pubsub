@@ -79,6 +79,9 @@ Summary: 2 packages finished [1.56s]_
 
 
 ### 6. Source newly built workspace
+* Run: `source ~/<workspace_path>/install/local_setup.bash`
+* If you already [updated your .bashrc file](https://github.com/patrickw135/pubsub/blob/master/bashrc_addons.txt) you can all consoles and open a new console. This will source your workspace automatically, as .bashrc is run every time you start a console.  
+__Important__: If you use multiple workspaces make sure you have the wanted workspace defined in .bashrc! Otherwise the changes introduced when building will not be available.
 
 
 ### 7. Check functionality
