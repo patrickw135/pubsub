@@ -1,3 +1,19 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+#********************************************#
+# Talker Template
+
+# Creted for:
+# ROS2 Workshop 2020
+# Roverentwicklung für Explorationsaufgaben
+# Institute for Space Systems
+# University of Stuttgart
+
+# Created by Patrick Winterhalder
+# IRS, University of Stuttgart
+#********************************************#
+
 import rclpy
 from rclpy.node import Node
 

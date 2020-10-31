@@ -1,15 +1,28 @@
-# ROS 2 Minimal Publisher/Subscriber Class Template
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+#********************************************#
+# Publisher/Subscriber Class Library
+
+# Creted for:
+# ROS2 Workshop 2020
+# Roverentwicklung für Explorationsaufgaben
+# Institute for Space Systems
+# University of Stuttgart
+
+# Created by Patrick Winterhalder
+# IRS, University of Stuttgart
+#********************************************#
 
 import rclpy
 from rclpy.node import Node
 
-# Use:
+# How to use:
 # from pubsub_library import MinimalPublisher
 # from pubsub_library import MinimalSubscriber
-# minimal_publisher = MinimalPublisher(NODE_NAME='minimal_pub', TOPIC_NAME='user_controller', MSG_TYPE=Usercontroller)
+# minimal_publisher = MinimalPublisher(NODE_NAME='minimal_pub', TOPIC_NAME='user_controller', MSG_TYPE=Usercontroller, MSG_PERIOD=0.5)
 # minimal_subscriber = MinimalSubscriber(NODE_NAME='minimal_sub', TOPIC_NAME='epos_feedback', MSG_TYPE=Eposreturn)
-
+# See --> talker.py, listener.py
 
 
 
@@ -117,7 +130,7 @@ class example_subscriber(MinimalSubscriber):
         # Init MinimalSubscriber:
         super().__init__(NODE_NAME, TOPIC_NAME, MSG_TYPE, NUM_MSGS)
         print("\t- " + str(TOPIC_NAME))
-        # Additional variables only for Epos subscriber
+        # !!! CUSTOMIZE THESE VARIABLES TO WORK WITH YOUR MESSAGE FILE !!!
         self.pos_actual = None
         self.vel_actual = None
         self.baffle_switch = None
@@ -169,3 +182,103 @@ class example_subscriber(MinimalSubscriber):
             print(string)
         return
 
+
+#************************************************************************************#
+# CustomMsg1 Subscriber Class
+class CustomMsg1_sub(MinimalSubscriber):
+
+    def __init__(self, NODE_NAME, TOPIC_NAME, MSG_TYPE, NUM_MSGS):
+        # Init MinimalSubscriber:
+        super().__init__(NODE_NAME, TOPIC_NAME, MSG_TYPE, NUM_MSGS)
+        print("\t- " + str(TOPIC_NAME))
+        # CustomMsg1 Variables
+        self.temperature = None
+        self.pressure = None
+        self.humidity = None
+        return
+    
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!!
+    def listener_callback(self, msg): # Overwrites callback from inherited class
+        self.topic_received = True
+        self.temperature = msg.temperature
+        self.pressure = msg.pressure
+        self.humidity = msg.humidity
+        #print_msg(self) # activate to print the received data --> customize print_msg(self) !
+        return
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!!
+    def return_msg(self): # Extract only msg variables from "self" object
+        msg = self.CUSTOM_MSG()
+        msg.temperature = self.temperature
+        msg.pressure = self.pressure
+        msg.humidity = self.humidity
+        return msg
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!! (optional)
+    def print_msg(self):
+        print("[SUBSCRIBER] %s received topic:\t/%s" %(self.NODE_NAME, self.TOPIC_NAME))
+        string = "Received:\t"
+
+        # Check length of all transmitted value lists to be equal (equal number of parameters)
+        length = len(self.temperature)
+        if any(len(lst) != length for lst in [self.temperature, self.pressure, self.humidity]):
+            print("[TRANSMISSION ERROR] Length of lists inside topic %s do not match" %(self.TOPIC_NAME))
+        else:
+            complete_list = []
+            complete_list.append(self.temperature)
+            complete_list.append(self.pressure)
+            complete_list.append(self.humidity)
+            #print(complete_list)
+            for i in range(len(complete_list)):
+                for y in range(len(complete_list[0])):
+                    string += "%.2f,\t" %(complete_list[i][y])
+            print(string)
+        return
+
+
+
+#************************************************************************************#
+# CustomMsg2 Subscriber Class
+class CustomMsg2_sub(MinimalSubscriber):
+
+    def __init__(self, NODE_NAME, TOPIC_NAME, MSG_TYPE, NUM_MSGS):
+        # Init MinimalSubscriber:
+        super().__init__(NODE_NAME, TOPIC_NAME, MSG_TYPE, NUM_MSGS)
+        print("\t- " + str(TOPIC_NAME))
+        # CustomMsg1 Variables
+        self.pitch_ctrl = None
+        self.yaw_ctrl = None
+        return
+    
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!!
+    def listener_callback(self, msg): # Overwrites callback from inherited class
+        self.topic_received = True
+        self.pitch_ctrl = msg.pitch_ctrl
+        self.yaw_ctrl = msg.yaw_ctrl
+        #print_msg(self) # activate to print the received data --> customize print_msg(self) !
+        return
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!!
+    def return_msg(self): # Extract only msg variables from "self" object
+        msg = self.CUSTOM_MSG()
+        msg.pitch_ctrl = self.pitch_ctrl
+        msg.yaw_ctrl = self.yaw_ctrl
+        return msg
+
+    # !!! CUSTOMIZE THIS FUNCTION TO WORK WITH YOUR MESSAGE FILE !!! (optional)
+    def print_msg(self):
+        print("[SUBSCRIBER] %s received topic:\t/%s" %(self.NODE_NAME, self.TOPIC_NAME))
+        string = "Received:\t"
+
+        # Check length of all transmitted value lists to be equal (equal number of parameters)
+        complete_list = []
+        complete_list.append([self.pitch_ctrl])
+        complete_list.append([self.yaw_ctrl])
+        #print(complete_list)
+        for i in range(len(complete_list)):
+            for y in range(len(complete_list[0])):
+                string += "%.2f,\t" %(complete_list[i][y])
+        print(string)
+        return
