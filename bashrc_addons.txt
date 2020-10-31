@@ -1,16 +1,19 @@
 # ROS 2 SETUP
 echo "ROS 2 Setup:"
+
 # Source Underlay
 source /opt/ros/foxy/setup.bash
+
+#Print Underlay
 echo "ROS Underlay:       source /opt/ros/foxy/setup.bash"
 
-# Source Overlay
-#. ~/ws_overlay_foxy/install/local_setup.bash
-#. install/setup.bash
+# Source all workspace overlays:
 source ~/ws_overlay_foxy/install/local_setup.bash
-#source ~/ws_overlay_foxy/install/setup.bash
+source ~/colcon_ws/install/local_setup.bash
+
+#Print Overlays
 echo "ROS Overlay:        source <ws>/install/local_setup.bash"
-#echo "ROS Overlay:        . install/local_setup.bash"
+echo "Overlays:           'ws_overlay_foxy' ,  'colcon_ws'"
 echo "******************************************************"
 
 # ROS 2 Settings
@@ -21,10 +24,24 @@ echo "ROS_PYTHON_VERSION: "$ROS_PYTHON_VERSION
 echo "ROS_DISTRO:         "$ROS_DISTRO
 echo "******************************************************"
 
-#export ROS_DOMAIN_ID=666
+# Define DDS Channel
+# (this is the channel your ROS system communicates at over your network)
+# For this, open the ROS Underlay setup file:
+# sudo nano /opt/ros/foxy/setup.bash
+# Here, add the following command
+# export ROS_DOMAIN_ID=<your_channel>
+# eg.: export ROS_DOMAIN_ID=69
+
+# Print DDS Settings
 echo "ROS 2 DDS Settings:"
-export ROS_DOMAIN_ID=666
 echo "ROS_DOMAIN_ID:      "$ROS_DOMAIN_ID
 echo "To change:          sudo nano /opt/ros/foxy/setup.bash"
+echo "******************************************************"
+
+echo "ROS 2 Topics active:"
+ros2 topic list
+echo "******************************************************"
+#echo "ROS 2 Nodes active:"
+#ros2 node list
 echo "******************************************************"
 printf "\n"
