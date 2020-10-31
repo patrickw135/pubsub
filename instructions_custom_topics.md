@@ -127,7 +127,7 @@ replacing `<package_name>` with the package containing the custom message and ` 
 However, in order to be able to import the custom message types, `<message_name>` must first be known to the ROS system. This was established when creating the [CMake package](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#cmake-package-eg-pubsub_msg) containing the custom message.
 
 ### 3. Configure package.xml
-In addition to importing the message type into your python script you must also configure the _package.xml_ file an add the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
+In addition to importing the message type into your python script you must also configure the _package.xml_ file adding the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
 ```xml
    <exec_depend>package_name</exec_depend>
 ```
@@ -146,6 +146,7 @@ exchanging _package_name_ with the source package of the custom message type.
 
 The talker console should print the sent data while the listener console should print the received data. These should match.
 
+If anything is unclear, compare this instruction material to the files in `/pubsub` and `/pubsub_msg`.  
 
 ## Sources  
 [ROS2 Tutorial](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#creating-custom-ros-2-msg-and-srv-files)  
