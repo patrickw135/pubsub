@@ -37,12 +37,19 @@ __Wie müssen alle Dateien verändert werden?__
 ### 6. Source newly built workspace
 
 ### 7. Check functionality
-* Check functionality of your messages by creataing a topic using your newly created message:  
-CustomMsg1:  
-`ros2 topic pub /chatter1 pubsub_msg/CustomMsg1 "{temperature: {24.1234, 25.9876}, pressure: {1012.556, 1013.987}, humidity: {0.002, 0.001}}" --rate 1`  
-CustomMsg2:  
-`ros2 topic pub /chatter2 pubsub_msg/CustomMsg2 "{pitch_ctr: 33.33, yaw_ctrl: 0.5}" --rate 1`
-* Ouput:  
+Check functionality of your messages by creataing a topic using your newly created message:  
+* CustomMsg1:  
+`ros2 topic pub /chatter1 pubsub_msg/CustomMsg1 "{temperature: {24.1234, 25.9876}, pressure: {1012.556, 1013.987}, humidity: {0.002, 0.001}}" --rate 1`
+* Response:  
+_publisher: beginning loop  
+publishing #1: pubsub_msg.msg.CustomMsg1(temperature=[24.12339973449707, 25.987600326538086], pressure=[1012.5560302734375, 1013.9869995117188], humidity=[0.0020000000949949026, 0.0010000000474974513])..._  
+
+* CustomMsg2:  
+`ros2 topic pub /chatter2 pubsub_msg/CustomMsg2 "{pitch_ctrl: 33.33, yaw_ctrl: 0.5}" --rate 1`
+* Response:  
+_publisher: beginning loop  
+publishing #1: pubsub_msg.msg.CustomMsg2(pitch_ctrl=33.33, yaw_ctrl=0.5)..._
+
 
 
 ## Python Package (eg. /pubsub)
@@ -70,6 +77,8 @@ __Wie importiert man die msg files__
 ### 4. Build Package
 
 ### 5. Source newly built workspace
+
+### 6. Run scripts
 
 
 
