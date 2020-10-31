@@ -66,7 +66,10 @@ Give your files comprehensible names, eg. _Epossetvalues.msg_
 
 
 ### 4. Configure package.xml
-
+In order to let the build system know what this package depends on add these lines to _package.xml_:
+```xml
+   -?-
+```
 
 ### 5. Build Package
 * Move back to the workspace's most top layer: `cd ~/<workspace_path>`
@@ -119,21 +122,32 @@ This package can be created as a CMake (C++) package or as a python package depe
 ### 1. Create Python Package
 
 ### 2. Write Python Scripts
+When using custom interfaces in python scripts these are imported using the python code  
+```python
+from <package_name>.msg import <message_name>
+```
+replacing `<package_name>` with the package containing the custom message and ` <message_name>` with the message file name (excluding the file ending .msg).  
+However, in order to be able to import the custom message types, `<message_name>` must first be known to the ROS system. This was established when creating the [CMake package](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#cmake-package-eg-pubsub_msg) containing the custom message.
 
 ### 3. Configure package.xml
+In addition to importing the message type into your python script you must also configure the _package.xml_ file adding the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
+```xml
+   <exec_depend>package_name</exec_depend>
+```
+exchanging _package_name_ with the source package of the custom message type.
+
 
 ### 4. Build Package
 
 ### 5. Source newly built workspace
 
 ### 6. Run scripts
-* Talker:  
-`ros2 run pubsub talker`
-* Listener:
-`ros2 run pubsub listener`
+* Talker: `ros2 run pubsub talker`
+* Listener: `ros2 run pubsub listener`
 
 The talker console should print the sent data while the listener console should print the received data. These should match.
 
+If anything is unclear, compare this instruction material to the files in `/pubsub` and `/pubsub_msg`.  
 
 ## Sources  
 [ROS2 Tutorial](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#creating-custom-ros-2-msg-and-srv-files)  
