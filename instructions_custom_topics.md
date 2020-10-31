@@ -66,7 +66,10 @@ Give your files comprehensible names, eg. _Epossetvalues.msg_
 
 
 ### 4. Configure package.xml
-
+In order to let the build system know what this package depends on add these lines to _package.xml_:
+```xml
+   -?-
+```
 
 ### 5. Build Package
 * Move back to the workspace's most top layer: `cd ~/<workspace_path>`
@@ -139,10 +142,8 @@ exchanging _package_name_ with the source package of the custom message type.
 ### 5. Source newly built workspace
 
 ### 6. Run scripts
-* Talker:  
-`ros2 run pubsub talker`
-* Listener:
-`ros2 run pubsub listener`
+* Talker: `ros2 run pubsub talker`
+* Listener: `ros2 run pubsub listener`
 
 The talker console should print the sent data while the listener console should print the received data. These should match.
 
