@@ -25,6 +25,12 @@ __Table of Content__
   * [Run scripts](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#6-run-scripts)
 * [Sources](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#sources)
 
+
+
+
+
+
+
 ## CMake Package (eg. /pubsub_msg)
 This package makes up the basis for custom ROS interfaces and contains all custom msg/srv/act files. Additionally, the special files (_CMakeLists.txt_ and _package.xml_) describe how these interface files are to be used.  
 
@@ -39,20 +45,41 @@ This package must be created as a CMake package: `ros2 pkg create --build-type a
   * This file contains meta information about this package
   * Configure this file according to this [instruction](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#package-xml)
 
-__ANLEITUNG schreiben__  
-__Wie müssen alle Dateien verändert werden?__
 
 ### 1. Create CMake Package
+* Move to your colcon workspace's src directory: `cd <workspace_path>/src`
+* (For example: `cd ~/colcon_ws/src`)
+* Create CMake package: `ros2 pkg create --build-type ament_cmake <package_name>
+* (Here: `ros2 pkg create --build-type ament_cmake pubsub_msg`)
+
 
 ### 2. Create Message Files
+* If not already available create msg directory inside package directory.  
+Resulting structure: <workspace_name>/src/<package_name>/msg
+* Move to newly created msg direcrory
+* Create your own custom message files, eg. _CustomMsg1.msg_.  
+Give your files comprehensible names, eg. _Epossetvalues.msg_
+
 
 ### 3. Configure CMakeLists.txt
 
+
 ### 4. Configure package.xml
 
+
 ### 5. Build Package
+* Move back to the workspace's most top layer: `cd ~/<workspace_path>`
+* Build workspace: `colcon build`
+* Sucessful response:  
+_Starting >>> pubsub  
+Starting >>> pubsub_msg  
+Finished <<< pubsub [0.85s]                                              
+Finished <<< pubsub_msg [1.09s]  
+Summary: 2 packages finished [1.56s]_
+
 
 ### 6. Source newly built workspace
+
 
 ### 7. Check functionality
 Check functionality of your messages by creataing a topic using your newly created message:  
@@ -70,6 +97,8 @@ publishing #1: pubsub_msg.msg.CustomMsg2(pitch_ctrl=33.33, yaw_ctrl=0.5)..._
 
 
 
+
+
 ## Python Package (eg. /pubsub)
 This package contains your scripts, programs and libraries. After building the workspace (`colcon build`) the custom messages are available to all other packages.  
 
@@ -82,9 +111,6 @@ This package can be created as a CMake (C++) package or as a python package depe
 * This directory contains your python scripts (eg. listener.py)
 * Also place the non-standard libraries in this directory and import the library in your python scripts
 
-
-__ANLEITUNG schreiben__  
-__Wie importiert man die msg files__ 
 
 ### 1. Create Python Package
 
