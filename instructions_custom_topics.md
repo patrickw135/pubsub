@@ -97,7 +97,12 @@ __Wie importiert man die msg files__
 ### 5. Source newly built workspace
 
 ### 6. Run scripts
+* Talker:  
+`ros2 run pubsub talker`
+* Listener:
+`ros2 run pubsub listener`
 
+The talker console should print the sent data while the listener console should print the received data. These should match.
 
 
 ## Sources  
