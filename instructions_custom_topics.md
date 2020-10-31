@@ -36,6 +36,7 @@ This package makes up the basis for custom ROS interfaces and contains all custo
 
 This package must be created as a CMake package: `ros2 pkg create --build-type ament-cmake <package_name>`  
 
+This will result in an empty package structure:
 * msg/srv/act directory:
   * This directory contains the custom msg files (eg. CustomMsg1.msg)
 * CMakeLists.txt:
