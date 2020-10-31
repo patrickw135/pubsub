@@ -5,7 +5,25 @@ For this at least two packages will be required:
 * The python package contains your scripts (eg. ROS nodes)
 * The CMake package contains the custom msg/srv/act files  
 
-Up to now, the custom msg/srv/act files cannot be created inside python packages as this is not supported yet.  
+The CMake package is required because the custom msg/srv/act files cannot be created inside the python package as this is not supported yet.  
+
+__Table of Content__  
+* [CMake Package (eg. /pubsub_msg)]()  
+  * [Create CMake Package]()
+  * [Create Message Files]()
+  * [Configure CMakeLists.txt]()
+  * [Configure package.xml]()
+  * [Build Package]()
+  * [Source newly built workspace]()
+  * [Check functionality]()
+* [Python Package (eg. /pubsub)]()
+  * [Create Python Package]()
+  * [Write Python Scripts]()
+  * [Configure package.xml]()
+  * [Build Package]()
+  * [Source newly built workspace]()
+  * [Run scripts]()
+* [Sources]()
 
 ## CMake Package (eg. /pubsub_msg)
 This package makes up the basis for custom ROS interfaces and contains all custom msg/srv/act files. Additionally, the special files (_CMakeLists.txt_ and _package.xml_) describe how these interface files are to be used.  
@@ -82,7 +100,6 @@ __Wie importiert man die msg files__
 
 
 
-
-__Sources__:  
+## Sources  
 [ROS2 Tutorial](https://index.ros.org/doc/ros2/Tutorials/Custom-ROS2-Interfaces/#creating-custom-ros-2-msg-and-srv-files)  
 [theconstructsim custom messages](https://www.theconstructsim.com/ros2-tutorials-7-how-to-create-a-ros2-custom-message-new/)  
