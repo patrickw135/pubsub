@@ -6,7 +6,7 @@ Roverentwicklung für Explorationsaufgaben
 Institute for Space Systems  
 University of Stuttgart.
 
-Created by [Patrick Winterhalder](),  
+Created by Patrick Winterhalder,  
 [IRS](https://www.irs.uni-stuttgart.de/en/), University of Stuttgart.  
   
   
