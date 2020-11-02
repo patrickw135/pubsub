@@ -1,3 +1,10 @@
+# Add these lines to .bashrc, do this:
+# sudo nano ~/.bashrc
+# move to end of .bashrc (arrow down)
+# Highlight the lines below and copy
+# Paste into console at the end of .bashrc
+# Console pasting: CTRL+LShift+V
+
 # ROS 2 SETUP
 echo "ROS 2 Setup:"
 
