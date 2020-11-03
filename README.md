@@ -33,7 +33,7 @@ Created by Patrick Winterhalder,
   * Cover turtlesim, rqt, topics, services, actions
 
 ## Install Instructions
-* Move to colcon workspace: `cd <workspace_path`
+* Move to colcon workspace: `cd <workspace_path>`
 * Clone repository: `git clone https://github.com/patrickw135/pubsub.git`
 * Build workspace: `colcon build`  
 __Note:__ Only the files inside _src/_ are of importance.
