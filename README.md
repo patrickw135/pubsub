@@ -34,7 +34,7 @@ Created by Patrick Winterhalder,
 
 ## Install Instructions
 * Move to colcon workspace: `cd <workspace_path>`
-* Clone repository: `git clone https://github.com/patrickw135/pubsub.git`
+* Clone repository: `git clone git://github.com/patrickw135/pubsub.git .` (include the . at the end)
 * Build workspace: `colcon build`  
 __Note:__ Only the files inside _src/_ are of importance.
 * Remember to run `source ~/<workspace_path>/install/local_setup.sh` after every build. Best would be to [add this command to _.bashrc_](https://github.com/patrickw135/pubsub/blob/master/bashrc_addons.txt) which is run everytime you start a new console.
