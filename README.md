@@ -16,9 +16,7 @@ Created by Patrick Winterhalder,
 * Install [Ubuntu 20.04]()
 * Install Visual Studio Code using [Ubuntu Software](https://wiki.ubuntuusers.de/Ubuntu_Software/)
 * Install [Git](https://linuxconfig.org/how-to-install-git-on-ubuntu-20-04-lts-focal-fossa-linux) (no account required yet)
-* Install [ROS2](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/) ("desktop" on PC, "base" on Raspberry Pi)
-  * Do install _argcomplete_
-  * No need for _ROS 1 bridge_, or _RMW implementations_
+* Install [ROS2](https://index.ros.org/doc/ros2/Installation/Foxy/Linux-Install-Debians/) ("desktop" on PC, "base" on Raspberry Pi). Do install _argcomplete_, no need for _ROS 1 bridge_ or _RMW implementations_.
 * Install and update _rosdep_:
   * `sudo apt install python3-rosdep2 -y`
   * `rosdep update`
