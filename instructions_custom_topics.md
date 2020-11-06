@@ -63,12 +63,40 @@ Give your files comprehensible names, eg. _Epossetvalues.msg_
 
 
 ### 3. Configure CMakeLists.txt
-
+Open CMakeLists.txt and ad these lines before `if(BUILD_TESTING)`:  
+`find_package(builtin_interfaces REQUIRED)`  
+`find_package(rosidl_default_generators REQUIRED)`  
+`find_package(std_msgs REQUIRED)`  
+`find_package(rclcpp REQUIRED)`  
+Then also add custom lines depending your package, here the custom message/service files are added:  
+`rosidl_generate_interfaces(${PROJECT_NAME}`  
+ `  "msg/CustomMsg1.msg"`  
+ `  "msg/CustomMsg2.msg"`  
+ `  DEPENDENCIES builtin_interfaces`  
+ ` )`
 
 ### 4. Configure package.xml
-In order to let the build system know what this package depends on add these lines to _package.xml_:
+In order to let the build system know what this package depends on add these lines to _package.xml_:  
+```xml 
+<!-- ADD THESE LINES: START HERE -->
+```  
 ```xml
-   -?-
+<build_depend>builtin_interfaces</build_depend>
+```
+```xml
+<build_depend>rosidl_default_generators</build_depend>
+```
+```xml
+<exec_depend>builtin_interfaces</exec_depend>
+```
+```xml
+<exec_depend>rosidl_default_runtime</exec_depend>
+```
+```xml  
+<member_of_group>rosidl_interface_packages</member_of_group>
+```
+```xml
+<!-- END HERE -->
 ```
 
 ### 5. Build Package
@@ -120,30 +148,38 @@ This package can be created as a CMake (C++) package or as a python package depe
 
 
 ### 1. Create Python Package
+* Move to your workspace's source directory: `cd <workspace_path>/src`
+* Create python package: `rps2 pkg create --build-type ament_python <pkg_name>`
 
 ### 2. Write Python Scripts
-When using custom interfaces in python scripts these are imported using the python code  
+When using custom interfaces in python scripts these must be imported into the python script first  
 ```python
 from <package_name>.msg import <message_name>
 ```
-replacing `<package_name>` with the package containing the custom message and ` <message_name>` with the message file name (excluding the file ending .msg).  
-However, in order to be able to import the custom message types, `<message_name>` must first be known to the ROS system. This was established when creating the [CMake package](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#cmake-package-eg-pubsub_msg) containing the custom message.
+replacing `<package_name>` with the package containing the custom message and `<message_name>` with the message file name (excluding the file ending .msg).  
+However, in order to be able to import the custom message types, `<message_name>` must first be known to the ROS system. This was established when creating the [CMake package](https://github.com/patrickw135/pubsub/blob/master/instructions_custom_topics.md#cmake-package-eg-pubsub_msg) containing the custom message. Additionally, you must add this dependency to the _package.xml_ of this package as stated in the next chapter.
 
 ### 3. Configure package.xml
-In addition to importing the message type into your python script you must also configure the _package.xml_ file adding the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
+In addition to importing the message type into your python script you must also configure _package.xml_ adding the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
 ```xml
    <exec_depend>package_name</exec_depend>
 ```
-exchanging _package_name_ with the source package of the custom message type.
+exchanging _package_name_ with the source package of the custom message type (here _pubsub_msg_).
 
 
 ### 4. Build Package
+Now you can build the Python package.  
+* Move to your workspace's root: `cd ~/<workspace_path>`
+* Build workspace: `colcon build --symlink-install`
 
 ### 5. Source newly built workspace
+* Run: `source ~/<workspace_path>/install/local_setup.bash`
+* If you already [updated your .bashrc file](https://github.com/patrickw135/pubsub/blob/master/bashrc_addons.txt) you can close all open consoles and start a new console (Ctrl+Alt+T). This will source your workspace automatically, as .bashrc is run every time you start a console.  
+__Important__: If you use multiple workspaces make sure you have the wanted workspace defined in .bashrc! Otherwise the changes introduced when building will not be available.
 
 ### 6. Run scripts
-* Talker: `ros2 run pubsub talker`
-* Listener: `ros2 run pubsub listener`
+* Run Talker: `ros2 run pubsub talker`
+* Run Listener: `ros2 run pubsub listener`
 
 The talker console should print the sent data while the listener console should print the received data. These should match.
 
