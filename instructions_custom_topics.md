@@ -150,10 +150,18 @@ However, in order to be able to import the custom message types, `<message_name>
 ### 3. Configure package.xml
 In addition to importing the message type into your python script you must also configure _package.xml_ adding the package dependency of where you inherite the custom message from. Add this line to _package.xml_:  
 ```xml
+   <depend>std_msgs</depend>
+   <!-- CUSTOM LINE -->
+   <!-- This is custom for the package you depend on -->
    <exec_depend>package_name</exec_depend>
 ```
-exchanging _package_name_ with the source package of the custom message type (here _pubsub_msg_).
-
+exchanging _package_name_ with the source package of the custom message type (here _pubsub_msg_), e.g.:  
+```xml
+   <depend>std_msgs</depend>
+   <!-- CUSTOM LINE -->
+   <!-- This is custom for the package you depend on -->
+   <exec_depend>pubsub_msg</exec_depend>
+```
 
 ### 4. Build Package
 Now you can build the Python package.  
