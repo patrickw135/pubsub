@@ -77,26 +77,14 @@ Then also add custom lines depending your package, here the custom message/servi
 
 ### 4. Configure package.xml
 In order to let the build system know what this package depends on add these lines to _package.xml_:  
-```xml 
-<!-- ADD THESE LINES: START HERE -->
-```  
 ```xml
-<build_depend>builtin_interfaces</build_depend>
-```
-```xml
-<build_depend>rosidl_default_generators</build_depend>
-```
-```xml
-<exec_depend>builtin_interfaces</exec_depend>
-```
-```xml
-<exec_depend>rosidl_default_runtime</exec_depend>
-```
-```xml  
-<member_of_group>rosidl_interface_packages</member_of_group>
-```
-```xml
-<!-- END HERE -->
+   <!-- ADD THESE LINES: START HERE -->
+   <build_depend>builtin_interfaces</build_depend>
+   <build_depend>rosidl_default_generators</build_depend>
+   <exec_depend>builtin_interfaces</exec_depend>
+   <exec_depend>rosidl_default_runtime</exec_depend>
+   <member_of_group>rosidl_interface_packages</member_of_group>
+   <!-- END HERE -->
 ```
 
 ### 5. Build Package
