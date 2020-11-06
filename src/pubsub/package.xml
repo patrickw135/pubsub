@@ -8,12 +8,13 @@
   <license>TODO: License declaration</license>
 
   <!-- ADD THESE LINES -->
-  <exec_depend>rclpy</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <build_depend>std_msgs</build_depend>
+  <!-- Package not listed when using this: <exec_depend>rclpy</exec_depend> -->
+  <!-- <exec_depend>std_msgs</exec_depend> -->
+  <!-- <build_depend>std_msgs</build_depend> -->
   <depend>std_msgs</depend>
   
   <!-- CUSTOM LINE -->
+  <!-- This is custom for the package you depend on -->
   <exec_depend>pubsub_msg</exec_depend>
   <!-- END HERE -->
   
