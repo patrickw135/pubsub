@@ -25,6 +25,8 @@ source /opt/ros/foxy/setup.bash
 sudo apt install -y python3-pip
 pip3 install -U argcomplete
 
+# If colcon does not build: Install pytest version>=5.0 ???
+
 # Install rosdep
 sudo apt install -y python3-rosdep2
 rosdep update
